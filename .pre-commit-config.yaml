@@ -1,0 +1,25 @@
+files: '.*'
+fail_fast: false
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: end-of-file-fixer
+        name: Lint all files for EOF
+      - id: trailing-whitespace
+        name: Lint all files for trailing whitespaces
+  - repo: https://github.com/markdownlint/markdownlint
+    rev: v0.13.0
+    hooks:
+      - id: markdownlint
+        name: Lint markdown files
+        entry: mdl
+        files: \.(md)$
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.0.0
+    hooks:
+      - id: conventional-pre-commit
+        name: Lint commit messages (conventional-pre-commit)
+        language: python
+        stages: [commit-msg]
+        args: [--verbose, --strict, feat, fix, docs, style, refactor, perf, test, build, ci, chore, revert]

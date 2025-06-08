@@ -1,0 +1,17 @@
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[info]
+name = "personal-eng-grammar"
+version = "0.1.0"
+
+[project]
+name = "personal-eng-grammar"
+requires-python = ">=3.10,<3.12"
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "4.2.0"
